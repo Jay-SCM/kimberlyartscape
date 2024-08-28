@@ -1,0 +1,40 @@
+.sidebarContainer {
+  position: relative;
+  height: 100vh;
+}
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: -250px; /* Initially hidden off-screen */
+  width: 250px;
+  height: 100%;
+  background-color: #ff6f61;
+  color: white;
+  transition: left 0.3s ease;
+  padding: 1rem;
+  overflow-y: auto; /* Allow scrolling if content overflows */
+  z-index: 1000;
+}
+
+.sidebarContainer:hover .sidebar {
+  left: 0; /* Slide in on hover */
+}
+
+.artistList {
+  list-style: none;
+  padding: 0;
+}
+
+.artistList li {
+  margin-bottom: 1rem;
+}
+
+.artistList a {
+  color: white;
+  text-decoration: none;
+}
+
+.artistList a:hover {
+  text-decoration: underline;
+}
