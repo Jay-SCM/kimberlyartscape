@@ -1,22 +1,30 @@
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import ArtworkCard from '../components/ArtworkCard';
+
+import Link from 'next/link';
+import styles from '../styles/Artworks.module.scss';
+
+const artworks = Array.from({ length: 37 }, (_, i) => {
+  const id = i + 1;
+  const src = id === 1 ? `/assets/1.jpg` : `/assets/1 (${id}).jpg`;
+  return { id, src, title: `Art ${id}`, artistId: `artist-${id}` };
+});
 
 const ArtworksPage = () => {
   return (
-    <div>
-      <Header />
-      <main>
-        <h1>All Artworks</h1>
-        <div className="artworks-grid">
-
-          <ArtworkCard title="Art 1" artist="Artist A" price="$100" />
-          <ArtworkCard title="Art 2" artist="Artist B" price="$200" />
-        </div>
-      </main>
-      <Footer />
+    <div className={styles.artworksContainer}>
+      <h1>Artworks</h1>
+      <div className={styles.artworksGrid}>
+        {artworks.map((art) => (
+          <Link key={art.id} href={`/artist/${art.artistId}`} passHref>
+            <div className={styles.artworkItem}>
+              <img src={art.src} alt={art.title} />
+              <h2>{art.title}</h2>
+            </div>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };
 
 export default ArtworksPage;
+

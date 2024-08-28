@@ -1,0 +1,35 @@
+
+
+// Define some global variables (colors, fonts, etc.)
+$primary-color: #ff6f61; // Example color
+$secondary-color: #f0f0f0;
+$font-family: 'Arial, sans-serif';
+
+// Global resets and base styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family;
+  background-color: $secondary-color;
+  color: $primary-color;
+  line-height: 1.6;
+}
+
+// Utility classes
+.container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}

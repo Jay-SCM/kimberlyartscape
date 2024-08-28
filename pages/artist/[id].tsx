@@ -1,22 +1,63 @@
+
 import { useRouter } from 'next/router';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
-import ArtistProfile from '../../components/ArtistProfile';
+import styles from '../../styles/ArtistProfile.module.scss';
+
+// Define types for artist and artwork
+type Artwork = {
+  id: number;
+  src: string;
+  title: string;
+  price: string;
+};
+
+type Artist = {
+  name: string;
+  bio: string;
+  artworks: Artwork[];
+};
+
+// Generate sample data for demonstration purposes
+const generateArtistData = (id: number): Artist => ({
+  name: `Artist ${id}`,
+  bio: `Artist ${id} is known for their unique style and contribution to modern art.`,
+  artworks: [
+    { id, src: id === 1 ? `/assets/1.jpg` : `/assets/1 (${id}).jpg`, title: `Art ${id}`, price: `$${id * 10}` }
+  ],
+});
+
+const artists = Array.from({ length: 37 }, (_, i) => generateArtistData(i + 1)).reduce(
+  (acc, artist) => ({ ...acc, [`artist-${artist.artworks[0].id}`]: artist }),
+  {} as Record<string, Artist>
+);
 
 const ArtistProfilePage = () => {
   const router = useRouter();
   const { id } = router.query;
+  const artist = artists[id as keyof typeof artists];
+
+  if (!artist) {
+    return <p>Artist not found</p>;
+  }
 
   return (
-    <div>
-      <Header />
-      <main>
-        <h1>Artist Profile</h1>
-        <ArtistProfile artistId={id as string} />
-      </main>
-      <Footer />
+    <div className={styles.artistProfileContainer}>
+      <h1>{artist.name}</h1>
+      <p>{artist.bio}</p>
+      <div className={styles.artworksGrid}>
+        {artist.artworks.map((art: Artwork) => (
+          <div key={art.id} className={styles.artworkItem}>
+            <img src={art.src} alt={art.title} />
+            <h2>{art.title}</h2>
+            <p>{art.price}</p>
+            <button>Add to Cart</button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
 
 export default ArtistProfilePage;
+
+
+

@@ -1,11 +1,12 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import styles from '../styles/LoginPage.module.scss';
 
 const LoginPage = () => {
   return (
     <div>
       <Header />
-      <main>
+      <main className={styles['login-container']}>
         <h1>Login</h1>
         <form>
           <label>
@@ -25,3 +26,5 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+
+

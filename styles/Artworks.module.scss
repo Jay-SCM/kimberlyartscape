@@ -1,0 +1,46 @@
+
+
+.artworksContainer {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.artworksContainer h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #ff6f61;
+  margin-bottom: 30px;
+}
+
+.artworksGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.artworkItem {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.artworkItem:hover {
+  transform: translateY(-5px);
+}
+
+.artworkItem img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.artworkItem h2 {
+  padding: 10px;
+  font-size: 1.25rem;
+  text-align: center;
+  color: #333;
+}
