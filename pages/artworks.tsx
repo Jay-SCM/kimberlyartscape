@@ -1,4 +1,4 @@
-
+import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../styles/Artworks.module.scss';
 
@@ -16,7 +16,7 @@ const ArtworksPage = () => {
         {artworks.map((art) => (
           <Link key={art.id} href={`/artist/${art.artistId}`} passHref>
             <div className={styles.artworkItem}>
-              <img src={art.src} alt={art.title} />
+              <Image src={art.src} alt={art.title} width={300} height={300} />
               <h2>{art.title}</h2>
             </div>
           </Link>
@@ -27,4 +27,5 @@ const ArtworksPage = () => {
 };
 
 export default ArtworksPage;
+
 

@@ -1,8 +1,7 @@
-
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import styles from '../../styles/ArtistProfile.module.scss';
 
-// Define types for artist and artwork
 type Artwork = {
   id: number;
   src: string;
@@ -16,7 +15,6 @@ type Artist = {
   artworks: Artwork[];
 };
 
-// Generate sample data for demonstration purposes
 const generateArtistData = (id: number): Artist => ({
   name: `Artist ${id}`,
   bio: `Artist ${id} is known for their unique style and contribution to modern art.`,
@@ -46,7 +44,7 @@ const ArtistProfilePage = () => {
       <div className={styles.artworksGrid}>
         {artist.artworks.map((art: Artwork) => (
           <div key={art.id} className={styles.artworkItem}>
-            <img src={art.src} alt={art.title} />
+            <Image src={art.src} alt={art.title} width={300} height={300} />
             <h2>{art.title}</h2>
             <p>{art.price}</p>
             <button>Add to Cart</button>
@@ -58,6 +56,3 @@ const ArtistProfilePage = () => {
 };
 
 export default ArtistProfilePage;
-
-
-
