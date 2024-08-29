@@ -1,18 +1,11 @@
+
+
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import DisplayCard from '../components/DisplayCard';
 import styles from '../styles/HomePage.module.scss';
 
-interface Artwork {
-    id: number;
-    title: string;
-    url: string;
-    artist: string;
-    price: number;
-}
-
 const IndexPage = () => {
-    const [artworks, setArtworks] = useState<Artwork[]>([]);
+    const [artworks, setArtworks] = useState<any[]>([]);
 
     useEffect(() => {
         const fetchArtworks = async () => {
@@ -29,21 +22,14 @@ const IndexPage = () => {
 
     return (
         <div className={styles.container}>
-            <h1 className={styles.heading}>Artworks</h1>
-            <div className={styles.grid}>
-                {artworks.length > 0 ? (
-                    artworks.map((artwork) => (
-                        <DisplayCard key={artwork.id} artwork={artwork} />
-                    ))
-                ) : (
-                    <p>No artworks available</p>
-                )}
-            </div>
+            <h1 className={styles.heading}>Welcome to KimberlyArtScape</h1>
+            {/* Optionally display a message or other content */}
         </div>
     );
 };
 
 export default IndexPage;
+
 
 
 

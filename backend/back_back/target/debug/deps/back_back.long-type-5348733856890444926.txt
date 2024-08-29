@@ -1,0 +1,1 @@
+fn() -> impl futures_util::Future<Output = impl Responder> {get_artworks}

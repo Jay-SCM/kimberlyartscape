@@ -1,14 +1,17 @@
-.container {
-  padding: 20px;
+.artwork-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.artwork-card {
+  border: 1px solid #ccc;
+  padding: 16px;
   text-align: center;
 }
 
-.title {
-  font-size: 2rem;
-  color: #333;
-}
-
-.text {
-  font-size: 1rem;
-  color: #666;
+.artwork-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
