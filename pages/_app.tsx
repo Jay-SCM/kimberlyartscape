@@ -14,24 +14,43 @@
 // export default MyApp;
 
 
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import '../styles/globals.scss';
-import Navbar from '../components/Navbar';  
+// import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+// import '../styles/globals.scss';
+// import Navbar from '../components/Navbar';  
 
-const queryClient = new QueryClient();
+// const queryClient = new QueryClient();
 
-function MyApp({ Component, pageProps }: any) {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <Navbar />
-      <main>
-        <Component {...pageProps} />
-      </main>
-    </QueryClientProvider>
-  );
-}
+// function MyApp({ Component, pageProps }: any) {
+//   return (
+//     <QueryClientProvider client={queryClient}>
+//       <Navbar />
+//       <main>
+//         <Component {...pageProps} />
+//       </main>
+//     </QueryClientProvider>
+//   );
+// }
 
-export default MyApp;
+// export default MyApp;
+
+//---- import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+// import '../styles/globals.scss';
+// import Navbar from '../components/Navbar';  
+
+// const queryClient = new QueryClient();
+
+// function MyApp({ Component, pageProps }: any) {
+//   return (
+//     <QueryClientProvider client={queryClient}>
+//       <Navbar />
+//       <main>
+//         <Component {...pageProps} />
+//       </main>
+//     </QueryClientProvider>
+//   );
+// }
+
+// export default MyApp;
 
 
 
@@ -76,3 +95,49 @@ export default MyApp;
 // }
 
 // export default MyApp;
+
+
+// import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+// import '../styles/globals.scss';
+// import Navbar from '../components/Navbar';
+// import Sidebar from '../components/Sidebar';
+
+// const queryClient = new QueryClient();
+
+// function MyApp({ Component, pageProps }: any) {
+//   return (
+//     <QueryClientProvider client={queryClient}>
+//       <Navbar />
+//       <Sidebar />
+//       <Component {...pageProps} />
+//     </QueryClientProvider>
+//   );
+// }
+
+// export default MyApp;
+
+
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import '../styles/globals.scss';
+import Navbar from '../components/Navbar';
+import Sidebar from '../components/Sidebar';
+
+const queryClient = new QueryClient();
+
+function MyApp({ Component, pageProps }: any) {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Navbar />
+      <div className="layout">
+        <div className="sidebarContainer">
+          <Sidebar />
+        </div>
+        <main className="mainContent">
+          <Component {...pageProps} />
+        </main>
+      </div>
+    </QueryClientProvider>
+  );
+}
+
+export default MyApp;

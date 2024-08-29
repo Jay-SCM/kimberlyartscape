@@ -1,0 +1,19 @@
+
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px; /* Adjust as needed */
+  background-color: #f7f7f7; /* Light background color */
+  color: #ff6f61; /* Match the theme color */
+  text-align: center;
+  border-radius: 10px; /* Rounded corners for a card-like appearance */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+
+  h1 {
+    font-size: 2rem;
+    margin: 0;
+    padding: 0 1rem; /* Padding to give space around text */
+  }
+}

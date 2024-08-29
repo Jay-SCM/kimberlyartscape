@@ -1,14 +1,20 @@
+
+
 .navbar {
   background-color: #ff6f61;
   padding: 1rem;
   display: flex;
   justify-content: center;
+  width: 100%; /* Ensures the navbar spans the entire width of the page */
+  box-sizing: border-box; /* Ensures padding does not affect the total width */
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
   gap: 1rem;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
 }
 
 .navbar a {

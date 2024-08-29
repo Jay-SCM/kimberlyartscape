@@ -1,16 +1,11 @@
-import Link from 'next/link';
+
+
+import styles from '../styles/Header.module.scss';
 
 const Header = () => {
   return (
-    <header>
-      <nav>
-        <ul>
-          <li><Link href="/">Home</Link></li>
-          <li><Link href="/artworks">Artworks</Link></li>
-          <li><Link href="/cart">Cart</Link></li>
-          <li><Link href="/login">Login</Link></li>
-        </ul>
-      </nav>
+    <header className={styles.header}>
+      <h1>Welcome to KimberlyArtScape</h1>
     </header>
   );
 };

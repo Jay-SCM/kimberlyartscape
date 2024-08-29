@@ -9,10 +9,11 @@ const Navbar = () => {
         <li><Link href="/artworks">Artworks</Link></li>
         <li><Link href="/cart">Cart</Link></li>
         <li><Link href="/login">Login</Link></li>
-        <li><Link href="/admin">Admin Dashboard</Link></li>
+        <li><Link href="/artist-uploads">artuploadtest</Link></li> 
       </ul>
     </nav>
   );
 };
 
 export default Navbar;
+

@@ -1,35 +1,120 @@
 
 
-// Define some global variables (colors, fonts, etc.)
-$primary-color: #ff6f61; // Example color
-$secondary-color: #f0f0f0;
-$font-family: 'Arial, sans-serif';
+// // Define some global variables (colors, fonts, etc.)
+// $primary-color: #ff6f61; // Example color
+// $secondary-color: #f0f0f0;
+// $font-family: 'Arial, sans-serif';
 
-// Global resets and base styles
-* {
-  margin: 0;
+// // Global resets and base styles
+// * {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+// }
+
+// body {
+//   font-family: $font-family;
+//   background-color: $secondary-color;
+//   color: $primary-color;
+//   line-height: 1.6;
+// }
+
+// // Utility classes
+// .container {
+//   width: 90%;
+//   margin: 0 auto;
+//   max-width: 1200px;
+// }
+
+// .text-center {
+//   text-align: center;
+// }
+
+// .mt-20 {
+//   margin-top: 20px;
+// }
+
+
+/* Layout structure for sidebar and main content */
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar container */
+.sidebarContainer {
+  position: relative;
+  height: 100%;
+}
+
+/* Sidebar styling */
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: -250px; /* Initially hidden off-screen */
+  width: 250px;
+  height: 100%;
+  background-color: #ff6f61;
+  color: white;
+  transition: left 0.3s ease;
+  padding: 1rem;
+  overflow-y: auto; /* Allow scrolling if content overflows */
+  z-index: 1000;
+}
+
+/* Sidebar sliding in on hover */
+.sidebarContainer:hover .sidebar {
+  left: 0; /* Slide in on hover */
+}
+
+/* Artist list styling */
+.artistList {
+  list-style: none;
   padding: 0;
-  box-sizing: border-box;
 }
 
-body {
-  font-family: $font-family;
-  background-color: $secondary-color;
-  color: $primary-color;
-  line-height: 1.6;
+.artistList li {
+  margin-bottom: 1rem;
 }
 
-// Utility classes
-.container {
-  width: 90%;
-  margin: 0 auto;
-  max-width: 1200px;
+.artistList a {
+  color: white;
+  text-decoration: none;
 }
 
-.text-center {
-  text-align: center;
+.artistList a:hover {
+  text-decoration: underline;
 }
 
-.mt-20 {
-  margin-top: 20px;
+/* Navbar styling */
+.navbar {
+  background-color: #ff6f61;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  z-index: 1001; /* Ensure it's on top of the content */
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* Main content styling */
+.mainContent {
+  flex-grow: 1;
+  padding: 1rem;
+  position: relative;
+  z-index: 1; /* Ensure this is below the navbar */
 }
