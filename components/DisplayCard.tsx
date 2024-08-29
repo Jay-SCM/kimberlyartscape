@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/DisplayCard.module.scss'; // Adjust the path if necessary
+import styles from '../styles/DisplayCard.module.scss'; // Make sure this file exists and is correctly named
 
 interface Artwork {
     id: number;
@@ -9,19 +9,13 @@ interface Artwork {
     price: number;
 }
 
-interface DisplayCardProps {
-    artwork: Artwork;
-}
-
-const DisplayCard: React.FC<DisplayCardProps> = ({ artwork }) => {
+const DisplayCard: React.FC<{ artwork: Artwork }> = ({ artwork }) => {
     return (
         <div className={styles.card}>
             <img src={artwork.url} alt={artwork.title} className={styles.image} />
-            <div className={styles.content}>
-                <h2 className={styles.title}>{artwork.title}</h2>
-                <p className={styles.artist}>Artist: {artwork.artist}</p>
-                <p className={styles.price}>Price: ${artwork.price.toFixed(2)}</p>
-            </div>
+            <h2 className={styles.title}>{artwork.title}</h2>
+            <p className={styles.artist}>{artwork.artist}</p>
+            <p className={styles.price}>${artwork.price.toFixed(2)}</p>
         </div>
     );
 };
